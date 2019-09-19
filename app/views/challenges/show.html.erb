@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<div class="layout">
+    <div class="sidebar">
+        <h1>We Love Blocks</h1>
+        <p>Choose your evaluation criteria:</p>
+        <div class="option-list">
+            <div><input type="checkbox" id="cbox" value="line_number"> <label for="cbox2"> Number of Code Lines  </label></div>
+            <div><input type="checkbox" id="cbox" value="time"> <label for="cbox2"> Time / Performance </label></div>
+            <div><input type="checkbox" id="cbox" value="complexity"> <label for="cbox2"> Algorithm Complexity </label></div>
+            <div><input type="checkbox" id="cbox" value="good_practices"> <label for="cbox2"> Good Practices </label></div>
+            <div><input type="checkbox" id="cbox" value="score"> <label for="cbox2"> Show Score </label></div>
+        </div>
+        <p>Game Settings:</p>
+        <div class="option-list">
+            <div><input type="checkbox" id="cbox" value="feedback"> <label for="cbox2"> Show Feedback </label></div>
+            <div><input type="checkbox" id="cbox" value="help"> <label for="cbox2"> Allow Remote Help </label></div>
+        </div>
+    </div>
+ 
+    <div >
+
+        <div id="toolkit">
+            <div class="select_block"></div>
+            <div class="select_block"></div>
+            <div>Player</div>
+        </div>
+
+        <div id="grid">
+            <% (0..20).each do |i| %>
+                <div class="row">
+                    <% (0..20).each do |j| %>
+                        <div class="cell" data-row="<%=i%>" data-column="<%=j%>">0</div>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+
+    
+
+    </div>
+
+    <div>
+        <canvas id="preview">
+        </canvas>
+    </div>
+
+</div>
+
+<%= javascript_pack_tag 'challenge', 'data-turbolinks-track': 'reload' %>
