@@ -28,6 +28,7 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find_by_keyname(params[:keyname])
     @challenge.map_grid = params[:map_grid]
     @challenge.objects_grid = params[:objects_grid]
+    @challenge.description = params[:description]
 
     @challenge.save
     

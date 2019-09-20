@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_20_143805) do
+ActiveRecord::Schema.define(version: 2019_09_20_183446) do
 
   create_table "challenges", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_09_20_143805) do
     t.string "objects_grid"
     t.string "keyname"
     t.string "unique"
+    t.string "description"
   end
 
   create_table "scores", force: :cascade do |t|
