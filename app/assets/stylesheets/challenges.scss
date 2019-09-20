@@ -48,8 +48,6 @@ $basic-blue: #BFEFFF;
 
 #preview {
     background-color: #222;
-    width: 400px;  
-    height: 400px;  
   }
 
 .layout {
@@ -58,12 +56,56 @@ $basic-blue: #BFEFFF;
 }
 
 .sidebar {
-    h1 {
-        margin-bottom: 80px;
+    svg { 
+        margin-bottom: 40px;
     }
     .option-list {
         div {
             display: flex;
+            padding: 5px;
         }
     }
+}
+
+.option-list div{
+    display: flex;
+    margin: 5px;
+    align-items: center;
+
+}
+
+.subtitle {
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+#player_item {
+    width: 25px;
+    height: 25px;
+    display: block;
+    background-color: #e688a1;
+}
+
+#goal_marker {
+    width: 25px;
+    height: 25px;
+    display: block;
+    background-color: #9cf196;
+}
+
+#bonus_point {
+    width: 25px;
+    height: 25px;
+    display: block;
+    background-color: #eceba7
+}
+
+#codeEditor {
+    display: flex;
+}
+#code-container {
+    height: 580px;
+    width: 30%;
+    margin: 0;
 }

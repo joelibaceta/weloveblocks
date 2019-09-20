@@ -1,51 +1,67 @@
 <p id="notice"><%= notice %></p>
 
+<script>
+
+    const zeros = (m, n) => [...Array(m)].map(e => Array(n).fill(0));
+
+    var arGrid = <%= @challenge.map_grid || "zeros(18, 18)"%> ;
+    var objGrid = <%= @challenge.objects_grid || "zeros(18, 18)"%> ;
+ 
+</script>
+
 <div class="layout">
     <div class="sidebar">
-        <svg xmlns="http://www.w3.org/2000/svg" width="176.477" height="45.5"><g data-name="Grupo 2"><g data-name="Rectángulo 1" fill="#597a98" stroke="#fff"><path stroke="none" d="M27.884 10.338l10.288 10.288-10.288 10.289-10.288-10.289z"/><path fill="none" d="M27.884 11.045l9.581 9.581-9.581 9.582-9.581-9.582z"/></g><g data-name="Rectángulo 2" fill="#5e92c3" stroke="#fff"><path stroke="none" d="M38.222 0L48.51 10.288 38.222 20.577 27.934 10.288z"/><path fill="none" d="M38.222.707l9.581 9.581-9.581 9.582-9.581-9.582z"/></g><g data-name="Rectángulo 3" fill="#87a7c3" stroke="#fff"><path stroke="none" d="M17.546 0l10.288 10.288-10.288 10.289L7.258 10.288z"/><path fill="none" d="M17.546.707l9.581 9.581-9.581 9.582-9.581-9.582z"/></g><g data-name="Trazado 1" fill="#5b7083"><path d="M16.996 33.835l-9.288-9.288V11.545l9.288 9.288v13.002z"/><path d="M8.208 12.752V24.34l8.288 8.288V21.04l-8.288-8.288m-1-2.414l10.288 10.288v14.416L7.208 24.754V10.338z" fill="#fff"/></g><g data-name="Trazado 2" fill="#415669"><path d="M27.334 44.172l-9.288-9.288V21.882l9.288 9.288v13.002z"/><path d="M18.546 23.09v11.587l8.288 8.288V31.377l-8.288-8.288m-1-2.414l10.288 10.288V45.38L17.546 35.091V20.675z" fill="#fff"/></g><g data-name="Trazado 3" fill="#8ea2b4"><path d="M28.434 44.293V31.17l9.288-9.288v13.122l-9.288 9.289z"/><path d="M37.222 23.09l-8.288 8.287v11.708l8.288-8.288V23.09m1-2.414v14.537L27.934 45.5V30.963l10.288-10.288z" fill="#fff"/></g><g data-name="Trazado 4" fill="#8ea9c3"><path d="M38.77 33.956V20.833l9.289-9.288v13.122l-9.288 9.289z"/><path d="M47.559 12.752l-8.288 8.288v11.708l8.288-8.288V12.752m1-2.414v14.537L38.271 35.163V20.626l10.288-10.288z" fill="#fff"/></g></g><text data-name="We Love Blocks" transform="translate(60.477 27.228)" fill="#707070" font-size="14" font-family="Silom"><tspan x="0" y="0">We Love Blocks</tspan></text></svg>
-        
-        <p>Choose your evaluation criteria:</p>
-        <div class="option-list">
-            <div><input type="checkbox" id="cbox" value="line_number"> <label for="cbox2"> Number of Code Lines  </label></div>
-            <div><input type="checkbox" id="cbox" value="time"> <label for="cbox2"> Time / Performance </label></div>
-            <div><input type="checkbox" id="cbox" value="complexity"> <label for="cbox2"> Algorithm Complexity </label></div>
-            <div><input type="checkbox" id="cbox" value="good_practices"> <label for="cbox2"> Good Practices </label></div>
-            <div><input type="checkbox" id="cbox" value="score"> <label for="cbox2"> Show Score </label></div>
-        </div>
-        <p>Game Settings:</p>
-        <div class="option-list">
-            <div><input type="checkbox" id="cbox" value="feedback"> <label for="cbox2"> Show Feedback </label></div>
-            <div><input type="checkbox" id="cbox" value="help"> <label for="cbox2"> Allow Remote Help </label></div>
-        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="188.724" height="52.84"><g data-name="Grupo 4"><g data-name="Grupo 3"><g data-name="Rectángulo 1" fill="#597a98" stroke="#fff"><path stroke="none" d="M32.381 12.005l11.947 11.947L32.381 35.9 20.434 23.952z"/><path fill="none" d="M32.381 12.712l11.24 11.24-11.24 11.24-11.24-11.24z"/></g><g data-name="Rectángulo 2" fill="#5e92c3" stroke="#fff"><path stroke="none" d="M44.387 0l11.947 11.947-11.947 11.948L32.44 11.947z"/><path fill="none" d="M44.387.707l11.24 11.24-11.24 11.24-11.24-11.24z"/></g><g data-name="Rectángulo 3" fill="#87a7c3" stroke="#fff"><path stroke="none" d="M20.376 0l11.947 11.947-11.947 11.948L8.429 11.947z"/><path fill="none" d="M20.376.707l11.24 11.24-11.24 11.24-11.24-11.24z"/></g><g data-name="Trazado 1" fill="#5b7083"><path d="M19.819 39.487L8.87 28.539V13.212L19.819 24.16v15.327z"/><path d="M9.371 14.42v13.912l9.948 9.948V24.367L9.37 14.419m-1-2.414l11.948 11.948v16.74L8.37 28.747V12.005z" fill="#fff"/></g><g data-name="Trazado 2" fill="#415669"><path d="M31.824 51.493L20.876 40.545V25.218l10.948 10.948v15.327z"/><path d="M21.376 26.425v13.913l9.948 9.948V36.373l-9.948-9.948m-1-2.414l11.948 11.948v16.74L20.376 40.753V24.011z" fill="#fff"/></g><g data-name="Trazado 3" fill="#8ea2b4"><path d="M32.94 51.633V36.166l10.947-10.948v15.467L32.939 51.633z"/><path d="M43.387 26.425l-9.948 9.948v14.053l9.948-9.948V26.425m1-2.414v16.881L32.439 52.84V35.959L44.387 24.01z" fill="#fff"/></g><g data-name="Trazado 4" fill="#8ea9c3"><path d="M44.944 39.627V24.16l10.948-10.948V28.68L44.944 39.627z"/><path d="M55.392 14.42l-9.948 9.947V38.42l9.948-9.948V14.42m1-2.414v16.881L44.444 40.834V23.953l11.948-11.948z" fill="#fff"/></g><g data-name="Rectángulo 4" fill="#597a98" stroke="#fff"><path stroke="none" d="M32.381 12.005l11.947 11.947L32.381 35.9 20.434 23.952z"/><path fill="none" d="M32.381 12.712l11.24 11.24-11.24 11.24-11.24-11.24z"/></g><g data-name="Trazado 5" fill="#415669"><path d="M31.824 51.493L20.876 40.545V25.218l10.948 10.948v15.327z"/><path d="M21.376 26.425v13.913l9.948 9.948V36.373l-9.948-9.948m-1-2.414l11.948 11.948v16.74L20.376 40.753V24.011z" fill="#fff"/></g><g data-name="Trazado 6" fill="#8ea2b4"><path d="M32.94 51.633V36.166l10.947-10.948v15.467L32.939 51.633z"/><path d="M43.387 26.425l-9.948 9.948v14.053l9.948-9.948V26.425m1-2.414v16.881L32.439 52.84V35.959L44.387 24.01z" fill="#fff"/></g></g><text data-name="We Love Blocks" transform="translate(129.724 22)" fill="#707070" font-size="14" font-family="Silom"><tspan x="-57.757" y="0">We Love Blocks</tspan></text><text data-name="GAME BUILDER" transform="translate(129.724 39.843)" fill="#3870be" font-size="14" font-family="Arial-BoldMT, Arial" font-weight="700" letter-spacing=".055em"><tspan x="-58.29" y="0">GAME BUILDER</tspan></text></g></svg>
+        <p class="subtitle">Choose your evaluation criteria:</p>
+        <form action="" method="POST">
+            <div class="option-list">
+                <div><input type="checkbox" id="cbox1" name="criteria" value="line_number"> <label for="cbox1"> Number of Code Lines  </label></div>
+                <div><input type="checkbox" id="cbox2" name="criteria" value="time"> <label for="cbox2"> Time / Performance </label></div>
+                <div><input type="checkbox" id="cbox3" name="criteria" value="complexity"> <label for="cbox3"> Algorithm Complexity </label></div>
+                <div><input type="checkbox" id="cbox4" name="criteria" value="good_practices"> <label for="cbox4"> Good Practices </label></div>
+                
+            </div>
+            <p class="subtitle">Game Settings:</p>
+            <div class="option-list">
+                <div><input type="checkbox" id="cbox6" name="settings" value="feedback"> <label for="cbox6"> Show Feedback </label></div>
+                <div><input type="checkbox" id="cbox7" name="settings" value="help"> <label for="cbox7"> Allow Remote Help </label></div>
+                <div><input type="checkbox" id="cbox5" name="criteria" value="t"> <label for="cbox5"> Time Limit </label></div>
+            </div>
+ 
+        </form>
     </div>
  
     <div >
 
-        <div id="toolkit">
-            <div class="select_block"></div>
-            <div class="select_block"></div>
-            <div>Player</div>
-        </div>
-
+        <p>Click to add a block and right click to remove it.</p>
+        <br/>
         <div id="grid">
-            <% (0..20).each do |i| %>
+            <% (0..18).each do |i| %>
                 <div class="row">
-                    <% (0..20).each do |j| %>
-                        <div class="cell" data-row="<%=i%>" data-column="<%=j%>">0</div>
+                    <% (0..18).each do |j| %>
+                        <div id="<%=i%>-<%=j%>" class="cell" draggable="true" data-row="<%=i%>" data-column="<%=j%>">0</div>
                     <% end %>
                 </div>
             <% end %>
         </div>
 
-    
+        <div id="toolkit">
+            <p> Drag & Drop special elements </p>
+            <div class="option-list"><div><div data-value="10"  id="player_item" draggable="true"></div><label>Player Init Point</label></div></div>
+            <div class="option-list"><div><div data-value="11" id="goal_marker" draggable="true"></div><label>Finish Point</label></div></div>
+            <div class="option-list"><div><div data-value="12" id="bonus_point" draggable="true"></div><label>Bonus Checkpoint</label></div></div>
+        </div>
 
     </div>
 
     <div>
-        <canvas id="preview">
+        <canvas id="preview" width="650" height="580">
         </canvas>
     </div>
 
 </div>
 
+
+
 <%= javascript_pack_tag 'challenge', 'data-turbolinks-track': 'reload' %>
+
