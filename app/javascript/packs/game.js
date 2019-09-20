@@ -100,10 +100,18 @@ function move_forward(){
 
     objGrid[x+1][y] = objGrid[x][y]
     objGrid[x][y] = 0;
-
+    
     redraw_preview();
 
 };
+
+// Blockly.JavaScript.STATEMENT_PREFIX = 'highlightBlock(%1);\n';
+// Blockly.JavaScript.addReservedWords('highlightBlock');
+
+// function highlightBlock(id) {
+//     workspace.highlightBlock(id);
+// }
+
 
 function find_player_block() {
     for (var x = 0; x < 18; x++) {
