@@ -56,8 +56,14 @@ $basic-blue: #BFEFFF;
 }
 
 .sidebar {
-    svg { 
-        margin-bottom: 40px;
+    svg {  
+    }
+    a {
+        background-color: #6892bf;
+        color: white;
+        padding: 1em 1.5em;
+        text-decoration: none;
+        text-transform: uppercase;
     }
     .option-list {
         div {
