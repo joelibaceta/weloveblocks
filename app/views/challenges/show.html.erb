@@ -10,10 +10,23 @@
 </script>
 
 <div class="layout">
-    <div class="sidebar">
+    <div class="sidebar"> 
+    
        <svg xmlns="http://www.w3.org/2000/svg"  viewbox="0 0 1075 1002" width="200px" height="200px"><defs><clipPath id="a"><path d="M0 0h1075v1002H0z"/></clipPath></defs><g data-name="Mesa de trabajo – 1" clip-path="url(#a)"><path fill="#fff" d="M0 0h1075v1002H0z"/><g data-name="Grupo 3"><path data-name="Trazado 1" d="M699 112.419l168.91 97.58L699 307.58l-172.973-97.595z" fill="#5e92c3"/><path data-name="Trazado 2" d="M867.769 209.125l-.002 200.46-171.496 98.297V306.608z" fill="#8ea9c3"/><path data-name="Trazado 3" d="M526.767 208.674v199.91l170.261 100.748v-203.14z" fill="#5b778e"/></g><g data-name="Grupo 1"><path data-name="Trazado 1" d="M333 112.419l168.91 97.58L333 307.58l-172.973-97.595z" fill="#87a7c3"/><path data-name="Trazado 2" d="M501.769 209.125l-.002 200.46-171.496 98.297V306.608z" fill="#5b778e"/><path data-name="Trazado 3" d="M160.767 208.674v199.91l170.261 100.748v-203.14z" fill="#5b7083"/></g><g data-name="Grupo 2"><path data-name="Trazado 1" d="M514 219.419l168.91 97.58L514 414.58l-172.973-97.595z" fill="#78a3cb"/><path data-name="Trazado 2" d="M682.769 316.125l-.002 200.46-171.496 98.297V413.608z" fill="#8ea2b4"/><path data-name="Trazado 3" d="M341.767 315.674v199.91l170.261 100.748v-203.14z" fill="#415669"/></g><text data-name="We Love Blocks" transform="translate(174 805)" fill="#5e92c3" font-size="96" font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700"><tspan x="0" y="0">We Love Blocks</tspan></text><text data-name="GAME BUILDER" transform="translate(255 948)" fill="#303539" font-size="64" font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700" letter-spacing=".1em"><tspan x="0" y="0">GAME BUILDER</tspan></text></g></svg>
        <p class="subtitle">Choose your evaluation criteria:</p>
+
         <form action="" method="POST">
+
+            <p> To Play this game, use <b><a class = "play_link" href="/challenges/<%= @challenge.unique %>/play">this link</a></b></p>
+
+            <br/>
+
+            <p class="subtitle">Instructions</p>
+            <textarea id="description" width="100%" rows=10 cols=20>
+
+            </textarea>
+            <br/><br/>
+            <p class="subtitle">Choose your evaluation criteria:</p>
             <div class="option-list">
                 <div><input type="checkbox" id="cbox1" name="criteria" value="line_number"> <label for="cbox1"> Number of Code Lines  </label></div>
                 <div><input type="checkbox" id="cbox2" name="criteria" value="time"> <label for="cbox2"> Time / Performance </label></div>

@@ -76,6 +76,7 @@ function save_changes() {
 
     formData.append("map_grid", JSON.stringify(arGrid));
     formData.append("objects_grid", JSON.stringify(objGrid));
+    formData.append("description", description_text.value);
 
     fetch(window.location.href, {
         method: 'PUT',
@@ -201,6 +202,11 @@ player_item.addEventListener("dragstart", function(ev) {
     ev.dataTransfer.setData("text", ev.target.dataset.value);
 });
 
+var description_text = document.getElementById("description");
+
+description_text.addEventListener("change", function(){
+
+});
 
 
 redraw_preview();
