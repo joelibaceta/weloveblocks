@@ -93,6 +93,15 @@ Blockly.JavaScript['move_block'] = function(block) {
     
 };
 
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > milliseconds) {
+        break;
+        }
+    }
+}
+
 function move_forward(){
     var coords = find_player_block();
     var x = coords[0];
@@ -101,6 +110,8 @@ function move_forward(){
     objGrid[x+1][y] = objGrid[x][y]
     objGrid[x][y] = 0;
     
+    sleep(1000);
+
     redraw_preview();
 
 };
