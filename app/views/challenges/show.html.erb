@@ -17,7 +17,7 @@
 
         <form action="" method="POST">
 
-            <p> To Play this game, use <br/><b><a class = "play_link" href="/challenges/<%= @challenge.unique %>/play">this link</a></b></p>
+            <p> To Play this game, use this link <br/><b><a class = "play_link" href="/challenges/<%= @challenge.unique %>/play">PLAY</a></b></p>
 
             <br/>
 
@@ -32,12 +32,7 @@
                 <div><input type="checkbox" id="cbox4" name="criteria" value="good_practices"> <label for="cbox4"> Good Practices </label></div>
                 
             </div>
-            <p class="subtitle">Game Settings:</p>
-            <div class="option-list">
-                <div><input type="checkbox" id="cbox6" name="settings" value="feedback"> <label for="cbox6"> Show Feedback </label></div>
-                <div><input type="checkbox" id="cbox7" name="settings" value="help"> <label for="cbox7"> Allow Remote Help </label></div>
-                <div><input type="checkbox" id="cbox5" name="criteria" value="t"> <label for="cbox5"> Time Limit </label></div>
-            </div>
+             
  
         </form>
     </div>
