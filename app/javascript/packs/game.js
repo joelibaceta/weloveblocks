@@ -109,9 +109,7 @@ function move_forward(){
 
     objGrid[x+1][y] = objGrid[x][y]
     objGrid[x][y] = 0;
-    
-    sleep(1000);
-
+     
     redraw_preview();
 
 };
